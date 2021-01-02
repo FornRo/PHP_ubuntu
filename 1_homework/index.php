@@ -11,20 +11,10 @@
 <body class="d-flex flex-column h-100">
 
 <?php
+
     $GET = $_GET["page"];
     $GET = (is_null($_GET["page"]) ? 'Home' : $GET);
 
-//    switch ($GET) {
-//        case null or 'Home':
-//            $get_page = 'Home';
-//            break;
-//        case 'Test':
-//            $get_page = 'Test';
-//            break;
-//        default:
-//            $get_page = 'not found';
-//            break;
-//    }
 ?>
 
 <header>
@@ -75,8 +65,8 @@
         <h4 style="font-style: italic;">php code</h4>
         <code class="small">
             <?php
-            //            var_dump($_GET["page"]);
-            //            echo $_GET["page"];
+                        var_dump($_GET["page"]);
+                        echo $_GET["page"];
 
 //            include 'base.php';
             ?>
