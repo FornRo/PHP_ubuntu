@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
-<body class="d-flex flex-column h-100">
-
+<body class="flex-shrink-0">
 <?php
 
     $GET = $_GET["page"];
@@ -65,10 +64,10 @@
         <h4 style="font-style: italic;">php code</h4>
         <code class="small">
             <?php
-                        var_dump($_GET["page"]);
-                        echo $_GET["page"];
+                echo $_GET["page"]."<br>";
+                var_dump($_GET["page"]);
 
-//            include 'base.php';
+//                include 'base.php';
             ?>
         </code>
         </p>
