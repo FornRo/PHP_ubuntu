@@ -1,0 +1,19 @@
+[{
+  "name": "Product 1",
+  "detail": "Lorem ipsum dolor sit amet",
+  "price": "9",
+  "categories": "vegetables",
+  "image": "http://placehold.it/300x300/999/CCC"
+},{
+  "name": "Product 2",
+  "detail": "Lorem ipsum dolor sit amet",
+  "price": "5",
+  "categories": "vegetables",
+  "image": "http://placehold.it/300x300/999/CCC"
+},{
+  "name": "Product 3",
+  "detail": "Lorem ipsum dolor sit amet",
+  "price": "3",
+  "categories": "vegetables",
+  "image": "http://placehold.it/300x300/999/CCC"
+}]

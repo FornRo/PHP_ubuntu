@@ -33,12 +33,13 @@
 <!-- Begin page content -->
 <main class="flex-shrink-0" style="padding-top: 60px;">
     <div class="text-center mb-4">
-        <p class="text-warning bg-dark m-5">TEST AREA</p>
+
+        <p class="text-warning bg-dark m-5"><a class="nav-link" aria-current="page" href="/test/">TEST AREA</a></p>
     </div>
 
     <?php
     session_start();
-        require 'base.php';
+        require 'test_area.php';
     ?>
 </main>
 

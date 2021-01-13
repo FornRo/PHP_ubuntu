@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>PHP</title>
@@ -9,6 +9,9 @@
 </head>
 
 <body class="d-flex flex-column h-100">
+<?php
+    require_once('function/session_area.php');
+?>
 
 <?php
 
@@ -34,34 +37,37 @@ $GET = (is_null($_GET["page"]) ? 'home' : $GET);
                         <a class="nav-link <?php echo ($GET == 'about' ? "active" : ""); ?>" aria-current="page" href="?page=about">About</a>
                     </li>
                     <li class="nav-item active">
+                        <a class="nav-link <?php echo ($GET == 'push_file' ? "active" : ""); ?>" aria-current="page" href="?page=push_file">push_file</a>
+                    </li>
+                    <li class="nav-item active">
                         <a class="nav-link" aria-current="page" href="/test/">test_area</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
-
                     <li class="nav-item active">
-                        <a class="nav-link <?php echo ($GET == 'push_file' ? "active" : ""); ?>" aria-current="page" href="?page=push_file">push_file</a>
+                        <a class="nav-link <?php echo ($GET == 'products' ? "active" : ""); ?>" aria-current="page" href="?page=products">products</a>
                     </li>
+                    <li class="nav-item active">
+                        <a class="nav-link <?php echo ($GET == 'basket' ? "active" : ""); ?>" aria-current="page" href="?page=basket">basket</a>
+                    </li>
+
+
                 </ul>
-                <a class="btn btn-sm btn-outline-secondary m-1" href="?page=sing_up_page">Sign up</a>
-                <a class="btn btn-sm btn-outline-secondary m-1" href="?page=login_page">Login</a>
+                <a class="btn btn-sm btn-outline-secondary m-1 <?php echo ($GET == 'sing_up_page' ? "active" : ""); ?>" href="?page=sing_up_page">Sign up</a>
+                <a class="btn btn-sm btn-outline-secondary m-1 <?php echo ($GET == 'login_page' ? "active" : ""); ?>" href="?page=login_page">Login</a>
 
                 <ul class="navbar-nav mb-2 mb-md-0">
                     <li class="nav-item active">
                         <a class="nav-link <?php echo ($GET == 'password_recovery_page' ? "active" : ""); ?>" aria-current="page" href="?page=password_recovery_page">re_pass</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link <?php echo ($GET == 'login_page' ? "active" : ""); ?>" aria-current="page" href="?page=login_page">login</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link <?php echo ($GET == 'sing_up_page' ? "active" : ""); ?>" aria-current="page" href="?page=sing_up_page">sing_up</a>
-                    </li>
+                    <form action="?page=home" >
+                        <li class="nav-item active">
+                            <a class="nav-link" aria-current="page" href="?unset_ss=1">unset_ss</a>
+    <!--                        <a class="nav-link" aria-current="page" href="?page=--><?php //print $GET; ?><!--&clear_ss=1">clear_ss</a>-->
+                        </li>
+                    </form>
                 </ul>
-<!--                <form class="d-flex">-->
-<!--                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
-<!--                    <button class="btn btn-outline-success" type="submit">Search</button>-->
-<!--                </form>-->
 
             </div>
         </div>
@@ -77,7 +83,7 @@ $GET = (is_null($_GET["page"]) ? 'home' : $GET);
 
             switch ($GET) {
                 case 'home':
-                    require 'page/base.php';
+                    require 'page/home.php';
                     break;
                 case 'login_page':
                     require 'registration/login_page.php';
@@ -94,9 +100,13 @@ $GET = (is_null($_GET["page"]) ? 'home' : $GET);
                 case 'push_file':
                     require 'registration/push_file.php';
                     break;
+                case 'products':
+                    require 'page/products.php';
+                    break;
+                case 'basket':
+                    require 'page/basket.php';
+                    break;
             }
-//            require 'base.php';
-//            include 'base.php';
             ?>
     </div>
 </main>

@@ -1,0 +1,37 @@
+[{
+  "name": "Product 1",
+  "detail": "Lorem ipsum dolor sit amet",
+  "price": "5",
+  "categories": "vegetables",
+  "image": "http://placehold.it/300x300/999/CCC"
+},{
+  "name": "Product 2",
+  "detail": "Lorem ipsum dolor sit amet",
+  "price": "15",
+  "categories": "vegetables",
+  "image": "http://placehold.it/300x300/999/CCC"
+},{
+  "name": "Product 3",
+  "detail": "Lorem ipsum dolor sit amet",
+  "price": "25",
+  "categories": "vegetables",
+  "image": "https://image.shutterstock.com/image-vector/vector-cartoon-banana-600w-154201229.jpg"
+},{
+  "name": "Product 4",
+  "detail": "Lorem ipsum dolor sit amet",
+  "price": "35",
+  "categories": "vegetables",
+  "image": "http://placehold.it/300x300/999/CCC"
+},{
+  "name": "Product 5",
+  "detail": "Lorem ipsum dolor sit amet",
+  "price": "45",
+  "categories": "vegetables",
+  "image": "http://placehold.it/300x300/999/CCC"
+},{
+  "name": "Product 6",
+  "detail": "Lorem ipsum dolor sit amet",
+  "price": "55",
+  "categories": "vegetables",
+  "image": "https://html5book.ru/wp-content/uploads/2015/10/black-dress.jpg"
+}]
