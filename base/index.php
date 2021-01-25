@@ -9,15 +9,12 @@
 </head>
 
 <body class="d-flex flex-column h-100">
-<?php
-    require_once('function/session_area.php');
-?>
 
 <?php
+session_start();
 
 $GET = $_GET["page"];
 $GET = (is_null($_GET["page"]) ? 'home' : $GET);
-
 ?>
 
 <header>
@@ -61,10 +58,9 @@ $GET = (is_null($_GET["page"]) ? 'home' : $GET);
                     <li class="nav-item active">
                         <a class="nav-link <?php echo ($GET == 'password_recovery_page' ? "active" : ""); ?>" aria-current="page" href="?page=password_recovery_page">re_pass</a>
                     </li>
-                    <form action="?page=home" >
+                    <form action="?page=home">
                         <li class="nav-item active">
                             <a class="nav-link" aria-current="page" href="?unset_ss=1">unset_ss</a>
-    <!--                        <a class="nav-link" aria-current="page" href="?page=--><?php //print $GET; ?><!--&clear_ss=1">clear_ss</a>-->
                         </li>
                     </form>
                 </ul>
@@ -83,6 +79,7 @@ $GET = (is_null($_GET["page"]) ? 'home' : $GET);
 
             switch ($GET) {
                 case 'home':
+                    if ($_GET['unset_ss']) {require 'function/unset_session.php';}
                     require 'page/home.php';
                     break;
                 case 'login_page':

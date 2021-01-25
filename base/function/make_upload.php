@@ -1,5 +1,4 @@
 <?php
-
     function can_upload($file){
         // если имя пустое, значит файл не выбран
         if($file['name'] == '')

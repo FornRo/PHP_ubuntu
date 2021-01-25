@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>PHP</title>
+    <title>TEST</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -32,15 +32,30 @@
 
 <!-- Begin page content -->
 <main class="flex-shrink-0" style="padding-top: 60px;">
-    <div class="text-center mb-4">
-
-        <p class="text-warning bg-dark m-5"><a class="nav-link" aria-current="page" href="/test/">TEST AREA</a></p>
+    <div class="row mb-4 bg-dark text-center">
+        <div class="col">
+            <a class="nav-link" aria-current="page" href="/test/">TEST AREA</a>
+        </div>
+        <div class="col">
+                <?php // clear URL and redirect to /test/
+                if( isset($_GET['unset_ss']) ) {
+//                    session_unset(); // $_SESSION[] = null;
+//                    unset($_SESSION['products']); // $_SESSION[] = null;
+                    session_destroy();
+                    header( 'Location: /test/' );
+                    exit();
+                }
+                ?>
+            <a class="nav-link" aria-current="page" href="?unset_ss=1">unset_ss</a>
+        </div>
     </div>
 
     <?php
     session_start();
-        require 'test_area.php';
+//        require 'test_area.php';
+        require 'push_file.php';
     ?>
+
 </main>
 
 

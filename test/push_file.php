@@ -43,7 +43,6 @@
     <div class="form-label-group w-50 mx-auto">
         <label for="file">Отправить этот файл: </label><br/>
         <input name="file" type="file" /><br/>
-        <input name="file" type="file" /><br/>
         <input type="submit" value="Push file" />
     </div>
     <!--    <button class="btn btn-lg btn-primary btn-block" type="submit">Push file</button>-->

@@ -1,64 +1,42 @@
-<div class="col-sm">
-
-</div>
-
-
+<!--<div class="col-sm">-->
+<!--</div>-->
 <div class="w-75 mx-auto">
     <code class="small">
     <?php
-
     //_________ start _________
-
-//    print_r($result);
-//        echo nl2br($a);
-
+    if (isset($_POST['name']) or isset($_POST['price'])) {
+        $_SESSION['products'][] = $_POST;
+        header( 'Location: /test/' );
+        exit();
+    }
+    foreach ($_SESSION['products'] as $key => $value) {
+        echo $key.' = ';
+        print_r($value);
+        print '<br>';
+    }
     //_________ end _________
-
     ?>
     </code>
 </div>
+
+<!--TEST_FORM-->
 <div class="container">
     <div class="row">
         <form method="post">
             <img class="img-thumbnail" style="max-width: 270px; max-height: 270px;" src="http://placehold.it/300x300/999/CCC">
             <div class="product-list">
-                <h5><input type="hidden" name="name" value="Product 1" />Product 1</h5>
-                <p><input type="hidden" name="price" value="9" />9 $</p>
+                <h5><input type="hidden" name="name" value="Product <?php $product_name = random_int(0, 5); echo $product_name; ?>" />Product <?php echo $product_name;?></h5>
+                <p><input type="hidden" name="price" value="<?php $prise = random_int(5, 15); echo $prise; ?>" /><?php echo $prise;?> $</p>
+                <input type="hidden" name="img" value="http://placehold.it/300x300/999/CCC" />
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Add to cart</button>
             </div>
         </form>
 
     </div>
 </div>
+<!--END TEST_FORM-->
 
 
-<div class="w-50 mx-auto">
-    <p>
-        <?php // clear URL
-        if( isset($_GET['unset_ss']) ) {
-            session_unset(); // $_SESSION['id_user'] = null;
-
-            // обрабатываем ситуацию
-            header( 'Location: /test' );
-            exit();
-        } else {
-            echo $_SESSION['id_user'];
-        }
-        ?>
-
-    </p>
-    <a href="?unset_ss=1">unset_ss</a><br>
-
-    <?php
-    if (isset($_SESSION['id_user'])) {
-        print '';
-//        print_r($_SESSION);
-    } else {
-        print '';
-//        print_r($_SESSION);
-    }
-    ?>
-</div>
 
 
 <footer class="footer mt-auto py-3 bg-light">
